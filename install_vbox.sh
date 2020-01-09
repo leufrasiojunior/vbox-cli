@@ -38,7 +38,7 @@ Distro_check(){
 	#If cancel select, exit...
 	{ printf "Process canceled. Exiting...\\n" ; exit 1; }
 	fi
-	cat  >> /etc/apt/sources.list << EOF
+	$SUDO cat  >> /etc/apt/sources.list << EOF
 	#Virtualbox
 	deb https://download.virtualbox.org/virtualbox/debian $dist contrib 
 EOF
@@ -66,7 +66,7 @@ EXTPACK=Oracle_VM_VirtualBox_Extension_Pack-$VERSION.vbox-extpack
 
 if [ -f $EXTPACK ]; then
    #echo "$EXTPACK foi encontrado. Instalando..."
-   sudo VBoxManage extpack install --replace $EXTPACK
+   $SUDO VBoxManage extpack install --replace $EXTPACK
 else
    #echo "Arquivo não encontrado. Baixando o $EXTPACK da internet"
    wget http://download.virtualbox.org/virtualbox/$MAIN/$EXTPACK
