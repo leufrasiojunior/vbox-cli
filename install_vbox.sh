@@ -3,7 +3,7 @@
 # Unless the screen is tiny
 r=$(( r < 20 ? 20 : r ))
 c=$(( c < 70 ? 70 : c ))
-
+clear
 #Se tiver algum erro, sai do configurador.
 set -e
 
@@ -54,9 +54,8 @@ EOF
 		wget -q https://www.virtualbox.org/download/oracle_vbox.asc -O- | sudo apt-key add -
 	fi	
 	echo "::: Wait... Apt update in progress..."
-	sudo apt-get update -qq & spinner $!
-	$SUDO apt update
-        $SUDO apt-get install virtualbox-6.0
+	$SUDO apt-get update -qq & spinner $!
+        $SUDO apt-get install -y virtualbox-6.1
 	update_expack
 }
 
