@@ -5,9 +5,9 @@ set -e
 
 
 install(){
+	cd /usr/local/src
 	wget -c -P /usr/local/src https://www.noip.com/client/linux/noip-duc-linux.tar.gz
 	tar xf noip-duc-linux.tar.gz -C /usr/local/src --strip-components=1
-	cd /usr/local/src
 	make
 	make install
 configure
