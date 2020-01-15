@@ -54,3 +54,5 @@ main(){
     fi
 
 }
+
+main
